@@ -13,7 +13,7 @@ def get_object_from_s3_bucket():
     content = response['Body']
 
     jsonObj = json.loads(content.read())
-    print(jsonObj)
+
     return jsonObj
 
 
@@ -25,12 +25,12 @@ def import_data_from_json(object):
     """
     book_list = []
     for record in object:
-        book = [str(record['author']), str(record['country']), str(record['imageLink']), str(record['link']),
+        book = [str(record['author']), str(record['country']), str(record['imageLink']), str(record['language']), str(record['link']),
                 int(record['pages']), str(record['title']), str(record['year'])]
         book_list.append(book)
 
-    df = pd.DataFrame(book_list, columns=['author', 'country', 'imageLink', 'link', 'pages', 'title', 'year'])
-    print(df)
+    df = pd.DataFrame(book_list, columns=['author', 'country', 'imageLink', 'language', 'link', 'pages', 'title', 'year'])
+
     return df
 
 
@@ -43,7 +43,7 @@ def drop_unnecessary_columns(df, columns_to_drop: list):
     """
     for col in columns_to_drop:
         df.drop(col, axis=1, inplace=True)
-    print(df)
+
     return df
 
 
@@ -58,7 +58,7 @@ def reorder_columns_in_data(df, columns_order: list):
         if col not in df.columns:
             raise Exception("There is no such columns in current dataframe")
     df = df[columns_order]
-    print(df)
+
     return df
 
 
@@ -74,10 +74,10 @@ def language_transformation(df, lang_dict: dict):
         languages = str(df['language'][ind]).split(',')
         new_lang = []
         for lang in languages:
-            new_lang.append(lang_dict[lang])
+            new_lang.append(lang_dict[lang.strip()])
         fin_str = ""
         for lang in new_lang:
-            fin_str += lang
+            fin_str += lang.strip()
             fin_str += ", "
         length = len(fin_str) - 2
         finest_str = ""
@@ -85,7 +85,7 @@ def language_transformation(df, lang_dict: dict):
             if len(finest_str) != length:
                 finest_str += i
         df['language'][ind] = finest_str
-    print(df)
+
     return df
 
 
@@ -105,7 +105,7 @@ def year_transformation(df):
             year_module = cur_year
             year_str = str(year_module) + " AD"
             df['year'][ind] = year_str
-    print(df)
+
     return df
 
 
@@ -122,17 +122,33 @@ def load_data_to_dynamo_db_table(df):
             'KeyType': 'HASH'
         },
         {
-            'AttributeName': 'date',
+            'AttributeName': 'year',
             'KeyType': 'RANGE'
         }
     ]
     attribute_definitions = [
         {
-            'AttributeName': 'phrase',
+            'AttributeName': 'author',
             'AttributeType': 'S'
         },
         {
             'AttributeName': 'uuid',
+            'AttributeType': 'S'
+        },
+        {
+            'AttributeName': 'title',
+            'AttributeType': 'S'
+        },
+        {
+            'AttributeName': 'year',
+            'AttributeType': 'S'
+        },
+        {
+            'AttributeName': 'language',
+            'AttributeType': 'S'
+        },
+        {
+            'AttributeName': 'pages',
             'AttributeType': 'S'
         }
     ]
@@ -145,15 +161,14 @@ def load_data_to_dynamo_db_table(df):
             'WriteCapacityUnits': 110
         }
     )
-    for index, row in df.iterrows():
-        phraseType = ''
-        if row[0].count(' ') > 0:
-            phraseType = 'Phrase'
-        else:
-            phraseType = 'Word'
-        chunk = {"phrase": row[0], "type": phraseType, 'uuid': str()}
-        print(chunk)
-        table.put_item(Item=chunk)
+    for ind in df.index:
+        book = {}
+        book['author'] = str(df['author'][ind])
+        book['title'] = str(df['title'][ind])
+        book['year'] = str(df['year'][ind])
+        book['language'] = str(df['language'][ind])
+        book['pages'] = str(df['pages'][ind])
+        table.put_item(Item=book)
     return 0
 
 
@@ -161,10 +176,9 @@ def main():
     columns_to_drop = ['country', 'imageLink', 'link']  # TODO: write here which columns you need to drop
     columns_order = ['author', 'title', 'year', 'language', 'pages']  # TODO: write here appropriate order of columns
 
-    #object = get_object_from_s3_bucket()
-    object_file = open('100_best_books.json')
-    object = json.load(object_file)
-
+    object = get_object_from_s3_bucket()
+    #object_file = open('100_best_books.json')
+    #object = json.load(object_file)
 
     initial_df = import_data_from_json(object)
     analyzed_df = drop_unnecessary_columns(initial_df, columns_to_drop)
@@ -183,5 +197,4 @@ def main():
     return result
 
 
-if __name__ == '__main__':
-    main()
+main()
