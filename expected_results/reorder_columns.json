@@ -1,0 +1,702 @@
+﻿[
+    {
+        "author":"Chinua Achebe",
+        "title":"Things Fall Apart",
+        "year":1958,
+        "language":"English",
+        "pages":209
+    },
+    {
+        "author":"Hans Christian Andersen",
+        "title":"Fairy tales",
+        "year":1836,
+        "language":"Danish",
+        "pages":784
+    },
+    {
+        "author":"Dante Alighieri",
+        "title":"The Divine Comedy",
+        "year":1315,
+        "language":"Italian",
+        "pages":928
+    },
+    {
+        "author":"Unknown",
+        "title":"The Epic Of Gilgamesh",
+        "year":-1700,
+        "language":"Akkadian",
+        "pages":160
+    },
+    {
+        "author":"Unknown",
+        "title":"The Book Of Job",
+        "year":-600,
+        "language":"Hebrew",
+        "pages":176
+    },
+    {
+        "author":"Unknown",
+        "title":"One Thousand and One Nights",
+        "year":1200,
+        "language":"Arabic",
+        "pages":288
+    },
+    {
+        "author":"Unknown",
+        "title":"Njál's Saga",
+        "year":1350,
+        "language":"Old Norse",
+        "pages":384
+    },
+    {
+        "author":"Jane Austen",
+        "title":"Pride and Prejudice",
+        "year":1813,
+        "language":"English",
+        "pages":226
+    },
+    {
+        "author":"Honoré de Balzac",
+        "title":"Le Père Goriot",
+        "year":1835,
+        "language":"French",
+        "pages":443
+    },
+    {
+        "author":"Samuel Beckett",
+        "title":"Molloy, Malone Dies, The Unnamable, the trilogy",
+        "year":1952,
+        "language":"French, English",
+        "pages":256
+    },
+    {
+        "author":"Giovanni Boccaccio",
+        "title":"The Decameron",
+        "year":1351,
+        "language":"Italian",
+        "pages":1024
+    },
+    {
+        "author":"Jorge Luis Borges",
+        "title":"Ficciones",
+        "year":1965,
+        "language":"Spanish",
+        "pages":224
+    },
+    {
+        "author":"Emily Brontë",
+        "title":"Wuthering Heights",
+        "year":1847,
+        "language":"English",
+        "pages":342
+    },
+    {
+        "author":"Albert Camus",
+        "title":"The Stranger",
+        "year":1942,
+        "language":"French",
+        "pages":185
+    },
+    {
+        "author":"Paul Celan",
+        "title":"Poems",
+        "year":1952,
+        "language":"German",
+        "pages":320
+    },
+    {
+        "author":"Louis-Ferdinand Céline",
+        "title":"Journey to the End of the Night",
+        "year":1932,
+        "language":"French",
+        "pages":505
+    },
+    {
+        "author":"Miguel de Cervantes",
+        "title":"Don Quijote De La Mancha",
+        "year":1610,
+        "language":"Spanish",
+        "pages":1056
+    },
+    {
+        "author":"Geoffrey Chaucer",
+        "title":"The Canterbury Tales",
+        "year":1450,
+        "language":"English",
+        "pages":544
+    },
+    {
+        "author":"Anton Chekhov",
+        "title":"Stories",
+        "year":1886,
+        "language":"Russian",
+        "pages":194
+    },
+    {
+        "author":"Joseph Conrad",
+        "title":"Nostromo",
+        "year":1904,
+        "language":"English",
+        "pages":320
+    },
+    {
+        "author":"Charles Dickens",
+        "title":"Great Expectations",
+        "year":1861,
+        "language":"English",
+        "pages":194
+    },
+    {
+        "author":"Denis Diderot",
+        "title":"Jacques the Fatalist",
+        "year":1796,
+        "language":"French",
+        "pages":596
+    },
+    {
+        "author":"Alfred Döblin",
+        "title":"Berlin Alexanderplatz",
+        "year":1929,
+        "language":"German",
+        "pages":600
+    },
+    {
+        "author":"Fyodor Dostoevsky",
+        "title":"Crime and Punishment",
+        "year":1866,
+        "language":"Russian",
+        "pages":551
+    },
+    {
+        "author":"Fyodor Dostoevsky",
+        "title":"The Idiot",
+        "year":1869,
+        "language":"Russian",
+        "pages":656
+    },
+    {
+        "author":"Fyodor Dostoevsky",
+        "title":"The Possessed",
+        "year":1872,
+        "language":"Russian",
+        "pages":768
+    },
+    {
+        "author":"Fyodor Dostoevsky",
+        "title":"The Brothers Karamazov",
+        "year":1880,
+        "language":"Russian",
+        "pages":824
+    },
+    {
+        "author":"George Eliot",
+        "title":"Middlemarch",
+        "year":1871,
+        "language":"English",
+        "pages":800
+    },
+    {
+        "author":"Ralph Ellison",
+        "title":"Invisible Man",
+        "year":1952,
+        "language":"English",
+        "pages":581
+    },
+    {
+        "author":"Euripides",
+        "title":"Medea",
+        "year":-431,
+        "language":"Greek",
+        "pages":104
+    },
+    {
+        "author":"William Faulkner",
+        "title":"Absalom, Absalom!",
+        "year":1936,
+        "language":"English",
+        "pages":313
+    },
+    {
+        "author":"William Faulkner",
+        "title":"The Sound and the Fury",
+        "year":1929,
+        "language":"English",
+        "pages":326
+    },
+    {
+        "author":"Gustave Flaubert",
+        "title":"Madame Bovary",
+        "year":1857,
+        "language":"French",
+        "pages":528
+    },
+    {
+        "author":"Gustave Flaubert",
+        "title":"Sentimental Education",
+        "year":1869,
+        "language":"French",
+        "pages":606
+    },
+    {
+        "author":"Federico García Lorca",
+        "title":"Gypsy Ballads",
+        "year":1928,
+        "language":"Spanish",
+        "pages":218
+    },
+    {
+        "author":"Gabriel García Márquez",
+        "title":"One Hundred Years of Solitude",
+        "year":1967,
+        "language":"Spanish",
+        "pages":417
+    },
+    {
+        "author":"Gabriel García Márquez",
+        "title":"Love in the Time of Cholera",
+        "year":1985,
+        "language":"Spanish",
+        "pages":368
+    },
+    {
+        "author":"Johann Wolfgang von Goethe",
+        "title":"Faust",
+        "year":1832,
+        "language":"German",
+        "pages":158
+    },
+    {
+        "author":"Nikolai Gogol",
+        "title":"Dead Souls",
+        "year":1842,
+        "language":"Russian",
+        "pages":432
+    },
+    {
+        "author":"Günter Grass",
+        "title":"The Tin Drum",
+        "year":1959,
+        "language":"German",
+        "pages":600
+    },
+    {
+        "author":"João Guimarães Rosa",
+        "title":"The Devil to Pay in the Backlands",
+        "year":1956,
+        "language":"Portuguese",
+        "pages":494
+    },
+    {
+        "author":"Knut Hamsun",
+        "title":"Hunger",
+        "year":1890,
+        "language":"Norwegian",
+        "pages":176
+    },
+    {
+        "author":"Ernest Hemingway",
+        "title":"The Old Man and the Sea",
+        "year":1952,
+        "language":"English",
+        "pages":128
+    },
+    {
+        "author":"Homer",
+        "title":"Iliad",
+        "year":-735,
+        "language":"Greek",
+        "pages":608
+    },
+    {
+        "author":"Homer",
+        "title":"Odyssey",
+        "year":-800,
+        "language":"Greek",
+        "pages":374
+    },
+    {
+        "author":"Henrik Ibsen",
+        "title":"A Doll's House",
+        "year":1879,
+        "language":"Norwegian",
+        "pages":68
+    },
+    {
+        "author":"James Joyce",
+        "title":"Ulysses",
+        "year":1922,
+        "language":"English",
+        "pages":228
+    },
+    {
+        "author":"Franz Kafka",
+        "title":"Stories",
+        "year":1924,
+        "language":"German",
+        "pages":488
+    },
+    {
+        "author":"Franz Kafka",
+        "title":"The Trial",
+        "year":1925,
+        "language":"German",
+        "pages":160
+    },
+    {
+        "author":"Franz Kafka",
+        "title":"The Castle",
+        "year":1926,
+        "language":"German",
+        "pages":352
+    },
+    {
+        "author":"Kālidāsa",
+        "title":"The recognition of Shakuntala",
+        "year":150,
+        "language":"Sanskrit",
+        "pages":147
+    },
+    {
+        "author":"Yasunari Kawabata",
+        "title":"The Sound of the Mountain",
+        "year":1954,
+        "language":"Japanese",
+        "pages":288
+    },
+    {
+        "author":"Nikos Kazantzakis",
+        "title":"Zorba the Greek",
+        "year":1946,
+        "language":"Greek",
+        "pages":368
+    },
+    {
+        "author":"D. H. Lawrence",
+        "title":"Sons and Lovers",
+        "year":1913,
+        "language":"English",
+        "pages":432
+    },
+    {
+        "author":"Halldór Laxness",
+        "title":"Independent People",
+        "year":1934,
+        "language":"Icelandic",
+        "pages":470
+    },
+    {
+        "author":"Giacomo Leopardi",
+        "title":"Poems",
+        "year":1818,
+        "language":"Italian",
+        "pages":184
+    },
+    {
+        "author":"Doris Lessing",
+        "title":"The Golden Notebook",
+        "year":1962,
+        "language":"English",
+        "pages":688
+    },
+    {
+        "author":"Astrid Lindgren",
+        "title":"Pippi Longstocking",
+        "year":1945,
+        "language":"Swedish",
+        "pages":160
+    },
+    {
+        "author":"Lu Xun",
+        "title":"Diary of a Madman",
+        "year":1918,
+        "language":"Chinese",
+        "pages":389
+    },
+    {
+        "author":"Naguib Mahfouz",
+        "title":"Children of Gebelawi",
+        "year":1959,
+        "language":"Arabic",
+        "pages":355
+    },
+    {
+        "author":"Thomas Mann",
+        "title":"Buddenbrooks",
+        "year":1901,
+        "language":"German",
+        "pages":736
+    },
+    {
+        "author":"Thomas Mann",
+        "title":"The Magic Mountain",
+        "year":1924,
+        "language":"German",
+        "pages":720
+    },
+    {
+        "author":"Herman Melville",
+        "title":"Moby Dick",
+        "year":1851,
+        "language":"English",
+        "pages":378
+    },
+    {
+        "author":"Michel de Montaigne",
+        "title":"Essays",
+        "year":1595,
+        "language":"French",
+        "pages":404
+    },
+    {
+        "author":"Elsa Morante",
+        "title":"History",
+        "year":1974,
+        "language":"Italian",
+        "pages":600
+    },
+    {
+        "author":"Toni Morrison",
+        "title":"Beloved",
+        "year":1987,
+        "language":"English",
+        "pages":321
+    },
+    {
+        "author":"Murasaki Shikibu",
+        "title":"The Tale of Genji",
+        "year":1006,
+        "language":"Japanese",
+        "pages":1360
+    },
+    {
+        "author":"Robert Musil",
+        "title":"The Man Without Qualities",
+        "year":1931,
+        "language":"German",
+        "pages":365
+    },
+    {
+        "author":"Vladimir Nabokov",
+        "title":"Lolita",
+        "year":1955,
+        "language":"English",
+        "pages":317
+    },
+    {
+        "author":"George Orwell",
+        "title":"Nineteen Eighty-Four",
+        "year":1949,
+        "language":"English",
+        "pages":272
+    },
+    {
+        "author":"Ovid",
+        "title":"Metamorphoses",
+        "year":100,
+        "language":"Classical Latin",
+        "pages":576
+    },
+    {
+        "author":"Fernando Pessoa",
+        "title":"The Book of Disquiet",
+        "year":1928,
+        "language":"Portuguese",
+        "pages":272
+    },
+    {
+        "author":"Edgar Allan Poe",
+        "title":"Tales",
+        "year":1950,
+        "language":"English",
+        "pages":842
+    },
+    {
+        "author":"Marcel Proust",
+        "title":"In Search of Lost Time",
+        "year":1920,
+        "language":"French",
+        "pages":2408
+    },
+    {
+        "author":"François Rabelais",
+        "title":"Gargantua and Pantagruel",
+        "year":1533,
+        "language":"French",
+        "pages":623
+    },
+    {
+        "author":"Juan Rulfo",
+        "title":"Pedro Páramo",
+        "year":1955,
+        "language":"Spanish",
+        "pages":124
+    },
+    {
+        "author":"Rumi",
+        "title":"The Masnavi",
+        "year":1236,
+        "language":"Persian",
+        "pages":438
+    },
+    {
+        "author":"Salman Rushdie",
+        "title":"Midnight's Children",
+        "year":1981,
+        "language":"English",
+        "pages":536
+    },
+    {
+        "author":"Saadi",
+        "title":"Bostan",
+        "year":1257,
+        "language":"Persian",
+        "pages":298
+    },
+    {
+        "author":"Tayeb Salih",
+        "title":"Season of Migration to the North",
+        "year":1966,
+        "language":"Arabic",
+        "pages":139
+    },
+    {
+        "author":"José Saramago",
+        "title":"Blindness",
+        "year":1995,
+        "language":"Portuguese",
+        "pages":352
+    },
+    {
+        "author":"William Shakespeare",
+        "title":"Hamlet",
+        "year":1603,
+        "language":"English",
+        "pages":432
+    },
+    {
+        "author":"William Shakespeare",
+        "title":"King Lear",
+        "year":1608,
+        "language":"English",
+        "pages":384
+    },
+    {
+        "author":"William Shakespeare",
+        "title":"Othello",
+        "year":1609,
+        "language":"English",
+        "pages":314
+    },
+    {
+        "author":"Sophocles",
+        "title":"Oedipus the King",
+        "year":-430,
+        "language":"Greek",
+        "pages":88
+    },
+    {
+        "author":"Stendhal",
+        "title":"The Red and the Black",
+        "year":1830,
+        "language":"French",
+        "pages":576
+    },
+    {
+        "author":"Laurence Sterne",
+        "title":"The Life And Opinions of Tristram Shandy",
+        "year":1760,
+        "language":"English",
+        "pages":640
+    },
+    {
+        "author":"Italo Svevo",
+        "title":"Confessions of Zeno",
+        "year":1923,
+        "language":"Italian",
+        "pages":412
+    },
+    {
+        "author":"Jonathan Swift",
+        "title":"Gulliver's Travels",
+        "year":1726,
+        "language":"English",
+        "pages":178
+    },
+    {
+        "author":"Leo Tolstoy",
+        "title":"War and Peace",
+        "year":1867,
+        "language":"Russian",
+        "pages":1296
+    },
+    {
+        "author":"Leo Tolstoy",
+        "title":"Anna Karenina",
+        "year":1877,
+        "language":"Russian",
+        "pages":864
+    },
+    {
+        "author":"Leo Tolstoy",
+        "title":"The Death of Ivan Ilyich",
+        "year":1886,
+        "language":"Russian",
+        "pages":92
+    },
+    {
+        "author":"Mark Twain",
+        "title":"The Adventures of Huckleberry Finn",
+        "year":1884,
+        "language":"English",
+        "pages":224
+    },
+    {
+        "author":"Valmiki",
+        "title":"Ramayana",
+        "year":-450,
+        "language":"Sanskrit",
+        "pages":152
+    },
+    {
+        "author":"Virgil",
+        "title":"The Aeneid",
+        "year":-23,
+        "language":"Classical Latin",
+        "pages":442
+    },
+    {
+        "author":"Vyasa",
+        "title":"Mahabharata",
+        "year":-700,
+        "language":"Sanskrit",
+        "pages":276
+    },
+    {
+        "author":"Walt Whitman",
+        "title":"Leaves of Grass",
+        "year":1855,
+        "language":"English",
+        "pages":152
+    },
+    {
+        "author":"Virginia Woolf",
+        "title":"Mrs Dalloway",
+        "year":1925,
+        "language":"English",
+        "pages":216
+    },
+    {
+        "author":"Virginia Woolf",
+        "title":"To the Lighthouse",
+        "year":1927,
+        "language":"English",
+        "pages":209
+    },
+    {
+        "author":"Marguerite Yourcenar",
+        "title":"Memoirs of Hadrian",
+        "year":1951,
+        "language":"French",
+        "pages":408
+    }
+]
