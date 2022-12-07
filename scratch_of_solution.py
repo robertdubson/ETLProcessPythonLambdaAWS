@@ -1,6 +1,5 @@
 import json
 
-
 import pandas as pd
 import boto3
 
@@ -14,6 +13,7 @@ def get_object_from_s3_bucket():
     content = response['Body']
 
     jsonObj = json.loads(content.read())
+    print(jsonObj)
     return jsonObj
 
 
@@ -30,6 +30,7 @@ def import_data_from_json(object):
         book_list.append(book)
 
     df = pd.DataFrame(book_list, columns=['author', 'country', 'imageLink', 'link', 'pages', 'title', 'year'])
+    print(df)
     return df
 
 
@@ -42,6 +43,7 @@ def drop_unnecessary_columns(df, columns_to_drop: list):
     """
     for col in columns_to_drop:
         df.drop(col, axis=1, inplace=True)
+    print(df)
     return df
 
 
@@ -56,6 +58,7 @@ def reorder_columns_in_data(df, columns_order: list):
         if col not in df.columns:
             raise Exception("There is no such columns in current dataframe")
     df = df[columns_order]
+    print(df)
     return df
 
 
@@ -82,6 +85,7 @@ def language_transformation(df, lang_dict: dict):
             if len(finest_str) != length:
                 finest_str += i
         df['language'][ind] = finest_str
+    print(df)
     return df
 
 
@@ -101,6 +105,7 @@ def year_transformation(df):
             year_module = cur_year
             year_str = str(year_module) + " AD"
             df['year'][ind] = year_str
+    print(df)
     return df
 
 
@@ -149,13 +154,17 @@ def load_data_to_dynamo_db_table(df):
         chunk = {"phrase": row[0], "type": phraseType, 'uuid': str()}
         print(chunk)
         table.put_item(Item=chunk)
+    return 0
 
 
 def main():
-    columns_to_drop = []  # TODO: write here which columns you need to drop
-    columns_order = []  # TODO: write here appropriate order of columns
+    columns_to_drop = ['country', 'imageLink', 'link']  # TODO: write here which columns you need to drop
+    columns_order = ['author', 'title', 'year', 'language', 'pages']  # TODO: write here appropriate order of columns
 
-    object = get_object_from_s3_bucket()
+    #object = get_object_from_s3_bucket()
+    object_file = open('100_best_books.json')
+    object = json.load(object_file)
+
 
     initial_df = import_data_from_json(object)
     analyzed_df = drop_unnecessary_columns(initial_df, columns_to_drop)
@@ -163,7 +172,9 @@ def main():
 
     # load language codes from JSON object
     # TODO: write your code here to load language codes to dictionary
-    lang_dict = {}  # this dictionary you will receive as a result of your upload
+    lang = open('language.json')
+    data_lang = json.load(lang)
+    lang_dict = data_lang  # this dictionary you will receive as a result of your upload
 
     analyzed_df = language_transformation(analyzed_df, lang_dict)
     analyzed_df = year_transformation(analyzed_df)
