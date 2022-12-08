@@ -1,7 +1,8 @@
 import json
-
+import uuid
 import pandas as pd
 import boto3
+import numpy
 
 s3 = boto3.client('s3')
 
@@ -25,11 +26,13 @@ def import_data_from_json(object):
     """
     book_list = []
     for record in object:
-        book = [str(record['author']), str(record['country']), str(record['imageLink']), str(record['language']), str(record['link']),
+        book = [str(record['author']), str(record['country']), str(record['imageLink']), str(record['language']),
+                str(record['link']),
                 int(record['pages']), str(record['title']), str(record['year'])]
         book_list.append(book)
 
-    df = pd.DataFrame(book_list, columns=['author', 'country', 'imageLink', 'language', 'link', 'pages', 'title', 'year'])
+    df = pd.DataFrame(book_list,
+                      columns=['author', 'country', 'imageLink', 'language', 'link', 'pages', 'title', 'year'])
 
     return df
 
@@ -128,48 +131,41 @@ def load_data_to_dynamo_db_table(df):
     ]
     attribute_definitions = [
         {
-            'AttributeName': 'author',
-            'AttributeType': 'S'
-        },
-        {
             'AttributeName': 'uuid',
-            'AttributeType': 'S'
-        },
-        {
-            'AttributeName': 'title',
             'AttributeType': 'S'
         },
         {
             'AttributeName': 'year',
             'AttributeType': 'S'
-        },
-        {
-            'AttributeName': 'language',
-            'AttributeType': 'S'
-        },
-        {
-            'AttributeName': 'pages',
-            'AttributeType': 'S'
         }
     ]
-    table = dynamodb.create_table(
-        TableName='best_books',
-        KeySchema=key_schema,
-        AttributeDefinitions=attribute_definitions,
-        ProvisionedThroughput={
-            'ReadCapacityUnits': 110,
-            'WriteCapacityUnits': 110
-        }
-    )
+
+    table_name = 'best_books'
+
+    existing_tables = dynamodb.list_tables()['TableNames']
+
+    if table_name not in existing_tables:
+        table = dynamodb.create_table(
+            TableName='best_books',
+            KeySchema=key_schema,
+            AttributeDefinitions=attribute_definitions,
+            ProvisionedThroughput={
+                'ReadCapacityUnits': 1,
+                'WriteCapacityUnits': 1
+            }
+        )
+    dynamodbresourse = boto3.resource('dynamodb', region_name='us-east-1')
+    table = dynamodbresourse.Table('best_books')
     for ind in df.index:
         book = {}
+        book['uuid'] = uuid.uuid4().hex
         book['author'] = str(df['author'][ind])
         book['title'] = str(df['title'][ind])
         book['year'] = str(df['year'][ind])
         book['language'] = str(df['language'][ind])
         book['pages'] = str(df['pages'][ind])
         table.put_item(Item=book)
-    return 0
+    return 200
 
 
 def main():
@@ -177,8 +173,8 @@ def main():
     columns_order = ['author', 'title', 'year', 'language', 'pages']  # TODO: write here appropriate order of columns
 
     object = get_object_from_s3_bucket()
-    #object_file = open('100_best_books.json')
-    #object = json.load(object_file)
+    # object_file = open('100_best_books.json')
+    # object = json.load(object_file)
 
     initial_df = import_data_from_json(object)
     analyzed_df = drop_unnecessary_columns(initial_df, columns_to_drop)
@@ -186,8 +182,12 @@ def main():
 
     # load language codes from JSON object
     # TODO: write your code here to load language codes to dictionary
-    lang = open('language.json')
-    data_lang = json.load(lang)
+    bucket = 'languagebucket'
+    key = 'language.json'
+    response = s3.get_object(Bucket=bucket, Key=key)
+    content = response['Body']
+
+    data_lang = json.loads(content.read())
     lang_dict = data_lang  # this dictionary you will receive as a result of your upload
 
     analyzed_df = language_transformation(analyzed_df, lang_dict)
@@ -197,4 +197,9 @@ def main():
     return result
 
 
-main()
+def lambda_handler(event, context):
+    main()
+    return {
+        'statusCode': 200,
+        'body': json.dumps('Hello from Lambda!')
+    }
